@@ -84,7 +84,7 @@ while running:
     # 3. 게임 캐릭터 위치 정의
     character_x_pos += to_x
     # 똥 위치
-    ddo_x_pos += ddong_speed
+    ddong_x_pos += ddong_speed
 
     if character_x_pos < 0:
         character_x_pos = 0
