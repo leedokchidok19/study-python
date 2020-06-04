@@ -1,4 +1,4 @@
-# 숫자 함수(mathm random), 슬라이싱,
+# 숫자 함수(math, random), 슬라이싱,
 # 문자열 함수(lower, upper, isupper, replace, index, find, count),
 # 문자열 포맷, 탈출문자(이스케이프)
 
