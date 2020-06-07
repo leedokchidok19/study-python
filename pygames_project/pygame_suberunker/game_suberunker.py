@@ -36,16 +36,16 @@ clock = pygame.time.Clock()
 
 # 1. 사용자 게임 초기화(배경 화면, 게임 이미지, 좌표, 속도, 폰트 등)
 # 배경 만들기
-background = pygame.image.load('studyPython/pygame_basic/background.png')
+background = pygame.image.load('python_games/pygames_project/pygame_suberunker/images/background.jpg')
 # 캐릭터 만들기
-character = pygame.image.load('studyPython/pygame_basic/character.png')
+character = pygame.image.load('python_games/pygames_project/pygame_basic/character.png')
 character_size = character.get_rect().size
 character_width = character_size[0]
 character_height = character_size[1]
 character_x_pos = (screen_width / 2) - (character_width / 2)
 character_y_pos = screen_height - character_height
 # 똥 만들기
-ddong = pygame.image.load('studyPython/pygame_basic/enemy.png')
+ddong = pygame.image.load('python_games/pygames_project/pygame_basic/enemy.png')
 ddong_size = ddong.get_rect().size
 ddong_width = ddong_size[0]
 ddong_height = ddong_size[1]
