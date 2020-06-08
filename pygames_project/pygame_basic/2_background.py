@@ -17,7 +17,7 @@ gameName = 'Nado Game Clone' # 게임 이름
 pygame.display.set_caption(gameName)
 
 # 배경 이미지 불러오기
-background = pygame.image.load('studyPython/pygame_basic/background.png')
+background = pygame.image.load('studyPython/pygames_project/pygame_basic/background.png')
 
 # 이벤트 루프
 # 게임이 진행중인가?
