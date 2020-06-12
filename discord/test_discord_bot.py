@@ -34,10 +34,15 @@ async def menu(ctx):
 async def 상태(ctx, *, arg): # 메시지가 띄어쓰기로 나눠서 들어오는경우 (arg) -> (*, arg) 변경 [ref 상태메시지1]
     send_message = "{0}봇의 상태 메시지 변경했습니다.\n변경 \
         메시지명은 {1}".format(bot.user.name, arg)
-    print('확인용 상태')
     await bot.change_presence(activity=discord.Game(name=arg))
     await ctx.send(send_message)
-    
+
+
+@bot.command(name='채널확인')
+async def channel_id(ctx):
+    _channel = ctx.channel
+    await ctx.send(f'채널명 : {_channel.name}, 채널ID : {_channel.id}')
+
 @bot.command(name='메시지삭제') # 1.0 이후 붙일 필요성이 없어졌다. (name='메시지삭제', pass_context=True [ref 컨텍스트1]
 async def message_clear(ctx, *, amount=1):
     await ctx.channel.purge(limit=amount)
@@ -51,6 +56,7 @@ bot.run(BOT_TOKEN)
 """
 비주얼 스튜디오 터미널 clear
 ctrl + shift + p -> Terminal:Clear 클릭
+
 import discord - pip install -U discord
 """
 
