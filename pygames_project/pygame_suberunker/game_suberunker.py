@@ -94,7 +94,7 @@ while running:
     # 똥이 화면 밖으로 사라지면 새로운 똥이 나온다.
     if ddong_y_pos > screen_height:
         ddong_y_pos = 0
-        ddo_x_pos = random.randint(0, screen_width - ddong_width)
+        ddong_x_pos = random.randint(0, screen_width - ddong_width)
     
     # 4. 충돌 처리har
     character_rect = character.get_rect()
