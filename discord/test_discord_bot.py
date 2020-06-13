@@ -57,7 +57,8 @@ bot.run(BOT_TOKEN)
 비주얼 스튜디오 터미널 clear
 ctrl + shift + p -> Terminal:Clear 클릭
 
-import discord - pip install -U discord
+import discord - pip install -U discord 디스코드 연결
+import mysql.connector - pip install mysql-connector-python 디비연결
 """
 
 '''

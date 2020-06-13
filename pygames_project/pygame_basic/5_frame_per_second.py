@@ -19,10 +19,10 @@ pygame.display.set_caption(gameName)
 clock = pygame.time.Clock()
 
 # 배경 이미지 불러오기
-background = pygame.image.load('studyPython/pygames_project/pygame_basic/background.png')
+background = pygame.image.load('background.png')
 
 # 캐릭터(스프라이트) 불러오기
-character = pygame.image.load('studyPython/pygames_project/pygame_basic/character.png')
+character = pygame.image.load('character.png')
 # 캐릭터 크기 가져오기
 character_size = character.get_rect().size
 #캐릭터 가로 크기
