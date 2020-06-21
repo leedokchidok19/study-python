@@ -47,7 +47,16 @@ async def channel_id(ctx):
 async def message_clear(ctx, *, amount=1):
     await ctx.channel.purge(limit=amount)
     await ctx.send(f'총 {amount}개 메시지 삭제 지운 사람 : *{ctx.author.name}*님')
-    
+
+@bot.command(name='음악')
+async def music_play(ctx, *, arg):
+    send_message = f'{ctx.author.name}봇의 상태 메시지 변경했습니다.'
+    await ctx.send(send_message)
+
+@bot.command()
+async def join(ctx):
+    pass
+
 
 bot.run(BOT_TOKEN)
 
