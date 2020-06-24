@@ -1,14 +1,19 @@
 #!/user/local/bin/python3
+'''
+함수 사용 전
+권한 없음 오류
+sudo chmod a+x 파일명.py
+'''
 print('Content-Type: text/hhtml')
 print()
 import cgi, os
 
-def getList():
-    files = os.listdir('data')
-    listStr = ''
-    for item in files:
-        listStr = listStr + '<li><a href=index.py?id={name}>{name}</a></li>'.format(name=item)
-    return listStr
+files = os.listdir('data')
+print(files)
+listStr = ''
+for item in files:
+    listStr = listStr + '<li><a href=index.py?id={name}>{name}</a></li>'.format(name=item)
+print(listStr)
 
 form = cgi.FieldStorage()
 if 'id' in form:
@@ -46,10 +51,4 @@ print('''<!doctype html>
           </p>
       </body>
 </html>
-'''.format(
-    title=pageId,
-    desc=desrciption,
-    listStr=getList(),
-    update_link=update_link,
-    delete_action=delete_action)
-     )
+'''.format(title=pageId, desc=desrciption, listStr=listStr, update_link=update_link, delete_action=delete_action))

@@ -13,10 +13,10 @@ print(listStr)
 form = cgi.FieldStorage()
 if 'id' in form:
     pageId = form["id"].value 
-    desc = open('data/'+pageId, 'r').read() # r을 생략하면 r 기본값으로 read
+    desrciption = open('data/'+pageId, 'r').read() # r을 생략하면 r 기본값으로 read
 else:
     pageId = 'Welcome'
-    desc = 'Hello, web'
+    desrciption = 'Hello, web'
     
 print('''<!doctype html>
 <html>
@@ -37,4 +37,4 @@ print('''<!doctype html>
           </form>
       </body>
 </html>
-'''.format(title=pageId, desrciption=desc, listStr=listStr))
+'''.format(title=pageId, desc=desrciption, listStr=listStr))
