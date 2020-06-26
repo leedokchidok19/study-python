@@ -1,19 +1,19 @@
 #!/user/local/bin/python3
 print('Content-Type: text/hhtml')
 print()
-import cgi, os
-
-def getList():
-    files = os.listdir('data')
-    listStr = ''
-    for item in files:
-        listStr = listStr + '<li><a href=index.py?id={name}>{name}</a></li>'.format(name=item)
-    return listStr
+import cgi, os, view, html_sanitizer
+# from html_sanitizer import Sanitizer
+sanitizer = html_sanitizer.Sanitizer()
+# sanitizer.sanitize('css내용')
 
 form = cgi.FieldStorage()
 if 'id' in form:
-    pageId = form["id"].value 
+    title = pageId = form["id"].value 
     desrciption = open('data/'+pageId, 'r').read() # r을 생략하면 r 기본값으로 read
+    # desrciption = desrciption.replace('<', '&lt;') # XSS 방지
+    # desrciption = desrciption.replace('>', '&gt;') # XSS 방지
+    desrciption = sanitizer.sanitize(desrciption) # XSS 방지
+    title = sanitizer.sanitize(title)
     update_link = '<a href="update.py?id="{}">update</a>'.format(pageId)
     delete_action = '''
         <form action="process_delete.py" method="post">
@@ -22,7 +22,7 @@ if 'id' in form:
         </form>
     '''.format(pageId)
 else:
-    pageId = 'Welcome'
+    title = pageId = 'Welcome'
     desrciption = 'Hello, web'
     update_link = ''
     delete_action = ''
@@ -47,9 +47,11 @@ print('''<!doctype html>
       </body>
 </html>
 '''.format(
-    title=pageId,
+    title=title,
     desc=desrciption,
-    listStr=getList(),
+    listStr=view.getList(),
     update_link=update_link,
     delete_action=delete_action)
      )
+
+# 참고 생활코딩 : https://www.youtube.com/watch?v=11AudAjpvSw

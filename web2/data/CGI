@@ -1,0 +1,17 @@
+CGI는 현재는 자주 사용되는 방식은 아니다.
+CGI, FastCGI, WSGI(파이썬 전용)
+web framework(파이썬)
+Django
+Flask
+Tornado
+Bottle
+web.py
+Pyramid
+web2py
+Cherrypy
+Grok
+Zope
+TurboGears
+Tipfy
+Quixote
+

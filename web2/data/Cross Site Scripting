@@ -1,0 +1,7 @@
+<script>
+    alert('XSS');
+    location.href='https://opentutorials.org'
+    //python html sanitizer(세탁하다)
+    //PyPI
+    //pip3 install html-sanitizer
+</script>
