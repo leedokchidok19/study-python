@@ -1,0 +1,59 @@
+가상 환경 들어오기
+cd 만든장고폴더명
+souce 가상환경명/bin/activate
+
+서버 구동
+# python manage.py runserver 0:80
+
+앱 생성
+# python manage.py startapp main - "main" 이름의 페이지 생성
+
+앱 등록
+1.urls.py - 어떤 url로 접속했을 때 가야할 경로
+2.views.py - 사용자에 맞는 화면 전달
+3.main > templates > main > index.html - 사용자가 직접 보는 화면
+4.models.py - DB 관련된 처리를 한다.
+
+css/js 경로
+1.템플릿 인식 settings.py -> STATIC_URL = '/static/' 121 line 다음에
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),) - tuple/list 둘 중 하나 사용
+2.view.py render로 html 파일을 만들어서
+css/js 상대 경로를 인식하지 못 한다. "만든장고폴더명" 아래에 관리하는 폴더를 따로 만든다.
+탬플릿 태그{% 템플릿명 %}로 감싸준다.
+
+기본 셋팅
+mkdir 폴더명 - 디렉토리 생성
+pip3 install virtualenv - 가상 환경 설치
+   서버 이전/ 다른 컴퓨터로 옮길 떄 다시 버전들을 맞춰야 하는데
+virtualenv을 할 경우 폴더째로 옮겨도 정상적으로 작동하게 해준다.
+virtualenv 가상환경이름
+source 가상환경이름/bin/activate - 가상환경으로 이동, 파이참은 가상환경셋팅이 되어있다.
+pip list - 설치된 목록 보기
+pip3 install django
+django-admin startproject landingpage .
+   landingpage이름을 .(현재 폴더)에 생성
+python manage.py migrate - 파이썬이 디비를 만질 수 있는 명령어
+python manage.py runserver 0:80 - 파이참의 경우 0:80 생략
+   실행이 안 되는 경우 landingpage(생성한 폴더명) 안의 settings.py 28 line의
+   ALLOWED_HOSTS = [] -> ALLOWED_HOSTS = ['*'] 모든 사용자 허용으로 변경
+python manage.py startapp main - "main" 이름의 페이지 생성
+settings.py
+33 line의 INSTALLED_APPS 수정 "main" 이름으로 만든 경우
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+예)
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'main', <-
+]
