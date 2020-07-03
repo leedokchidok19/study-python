@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main.views import index # main안에 views의 index 함수를 매칭
+from django.conf.urls.static import static # 이미지 경로
+from django.conf import settings           # 불어오기 
 
 urlpatterns = [
     path('admin/', admin.site.urls), # path =  https://python-games-epshm.run.goorm.io/admin
     path('', index), # path =  https://python-games-epshm.run.goorm.io
 ]
+
+# 등록된 이미지 보여주는 url
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -32,7 +32,7 @@ pip list - 설치된 목록 보기
 pip3 install django
 django-admin startproject landingpage .
    landingpage이름을 .(현재 폴더)에 생성
-python manage.py migrate - 파이썬이 디비를 만질 수 있는 명령어
+python manage.py migrate - 파이썬이 DB를 만질 수 있는 명령어
 python manage.py runserver 0:80 - 파이참의 경우 0:80 생략
    실행이 안 되는 경우 landingpage(생성한 폴더명) 안의 settings.py 28 line의
    ALLOWED_HOSTS = [] -> ALLOWED_HOSTS = ['*'] 모든 사용자 허용으로 변경
@@ -57,3 +57,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main', <-
 ]
+models.py에 DB에 사용할 필드를 생성
+python manage.py makemigrations - DB명령어
+(Migrations for 'main':
+  main/migrations/0001_initial.py
+    - Create model Post)생성
+python manage.py migrate - 입력
+(Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main, sessions
+Running migrations:
+  Applying main.0001_initial... OK)
+
+python manage.py createsuperuser - 슈퍼유저 생성

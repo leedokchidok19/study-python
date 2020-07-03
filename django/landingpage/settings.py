@@ -119,6 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+STATICFILES_DIRS = [ # 부트스트랩 적용
     os.path.join(BASE_DIR, 'static'),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'postImg') # 이미지 저장되는 위치 지정
+MEDIA_URL = '/postImg/'
