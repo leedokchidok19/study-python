@@ -1,7 +1,7 @@
 import selenium    # pip install selenium
 from selenium import webdriver
 
-search_term = '박보영'
+search_term = '검색대상'
 url = f'https://www.google.co.in/search?q={search_term}&tbm=isch'
 
 browser = webdriver.Chrome('chromedriver.exe')
