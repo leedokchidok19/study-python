@@ -1,7 +1,7 @@
 from tkinter import * # gui tkinter 사용
 
 root = Tk()
-#제목
+# 제목
 root.title('gui title')
 root.geometry('640x480')
 

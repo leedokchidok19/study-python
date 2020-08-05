@@ -1,7 +1,7 @@
 from tkinter import * # gui tkinter 사용
 
 root = Tk()
-root.title('gui title') #제목
+root.title('gui title') # 제목
 root.geometry('640x480') # 가로 * 세로
 
 chkvar = IntVar() # chkvar 에 Int 형으로 값을 저장한다
